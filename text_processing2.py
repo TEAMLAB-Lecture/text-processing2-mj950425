@@ -4,7 +4,7 @@
 
 
 def digits_to_words(input_string):
-    dic={"1":"one", "2":"two", "3":"three","4":"four","5":"five","6":"six","7":"seven","8":"eight","9":"nine" }
+    dic={"1":"one", "2":"two", "3":"three","4":"four","5":"five","6":"six","7":"seven","8":"eight","9":"nine","0":"zero"}
     input_string = list(input_string)
     answer=[]
     for i in range(len(input_string)):
@@ -49,7 +49,8 @@ def digits_to_words(input_string):
 
 
 def to_camel_case(underscore_str):
-    underscore_str = underscore_str.lower()
+    if "_" in underscore_str:
+        underscore_str = underscore_str.lower()
     underscore_str = list(underscore_str.split("_"))
     underscore_str = list(filter(lambda x: x != "",underscore_str))
 
